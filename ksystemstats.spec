@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : ksystemstats
-Version  : 5.24.0
-Release  : 10
-URL      : https://download.kde.org/stable/plasma/5.24.0/ksystemstats-5.24.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.24.0/ksystemstats-5.24.0.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.24.0/ksystemstats-5.24.0.tar.xz.sig
+Version  : 5.24.1
+Release  : 11
+URL      : https://download.kde.org/stable/plasma/5.24.1/ksystemstats-5.24.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.24.1/ksystemstats-5.24.1.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.24.1/ksystemstats-5.24.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-2.0 GPL-3.0
@@ -91,15 +91,15 @@ services components for the ksystemstats package.
 
 
 %prep
-%setup -q -n ksystemstats-5.24.0
-cd %{_builddir}/ksystemstats-5.24.0
+%setup -q -n ksystemstats-5.24.1
+cd %{_builddir}/ksystemstats-5.24.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644788689
+export SOURCE_DATE_EPOCH=1645036274
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -115,25 +115,25 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1644788689
+export SOURCE_DATE_EPOCH=1645036274
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksystemstats
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/f1946dab78e58c04c8c25ec6b074f5fc5c2830fe
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ksystemstats/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/ksystemstats/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ksystemstats/e712eadfab0d2357c0f50f599ef35ee0d87534cb
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ksystemstats/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/ksystemstats-5.24.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/ksystemstats-5.24.0/plugins/cpu/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
-cp %{_builddir}/ksystemstats-5.24.0/plugins/disks/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
-cp %{_builddir}/ksystemstats-5.24.0/plugins/gpu/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
-cp %{_builddir}/ksystemstats-5.24.0/plugins/lmsensors/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/7ff5a7dd2c915b2b34329c892e06917c5f82f3a4
-cp %{_builddir}/ksystemstats-5.24.0/plugins/memory/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
-cp %{_builddir}/ksystemstats-5.24.0/plugins/network/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
-cp %{_builddir}/ksystemstats-5.24.0/plugins/osinfo/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
-cp %{_builddir}/ksystemstats-5.24.0/plugins/power/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/f1946dab78e58c04c8c25ec6b074f5fc5c2830fe
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ksystemstats/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/ksystemstats/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ksystemstats/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ksystemstats/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/ksystemstats-5.24.1/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/ksystemstats-5.24.1/plugins/cpu/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/plugins/disks/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/plugins/gpu/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/plugins/lmsensors/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/7ff5a7dd2c915b2b34329c892e06917c5f82f3a4
+cp %{_builddir}/ksystemstats-5.24.1/plugins/memory/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/plugins/network/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/plugins/osinfo/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
+cp %{_builddir}/ksystemstats-5.24.1/plugins/power/metadata.json.license %{buildroot}/usr/share/package-licenses/ksystemstats/4eaf911568a0c644a8b15fc8b348e89eae0a50f5
 pushd clr-build
 %make_install
 popd
