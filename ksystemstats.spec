@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : ksystemstats
-Version  : 5.25.5
-Release  : 21
-URL      : https://download.kde.org/stable/plasma/5.25.5/ksystemstats-5.25.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.5/ksystemstats-5.25.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.5/ksystemstats-5.25.5.tar.xz.sig
+Version  : 5.26.0
+Release  : 22
+URL      : https://download.kde.org/stable/plasma/5.26.0/ksystemstats-5.26.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.0/ksystemstats-5.26.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.0/ksystemstats-5.26.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-2.0 GPL-3.0
@@ -22,7 +22,6 @@ Requires: ksystemstats-services = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
-BuildRequires : ki18n-dev
 BuildRequires : libksysguard-dev
 BuildRequires : lm-sensors-dev
 BuildRequires : networkmanager-qt-dev
@@ -90,15 +89,15 @@ services components for the ksystemstats package.
 
 
 %prep
-%setup -q -n ksystemstats-5.25.5
-cd %{_builddir}/ksystemstats-5.25.5
+%setup -q -n ksystemstats-5.26.0
+cd %{_builddir}/ksystemstats-5.26.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662509284
+export SOURCE_DATE_EPOCH=1665770774
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -114,14 +113,13 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662509284
+export SOURCE_DATE_EPOCH=1665770774
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksystemstats
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a || :
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/f1946dab78e58c04c8c25ec6b074f5fc5c2830fe || :
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/ksystemstats/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/ksystemstats/2a638514c87c4923c0570c55822620fad56f2a33 || :
-cp %{_builddir}/ksystemstats-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/ksystemstats/e712eadfab0d2357c0f50f599ef35ee0d87534cb || :
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/ksystemstats/6091db0aead0d90182b93d3c0d09ba93d188f907 || :
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275 || :
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275 || :
@@ -169,7 +167,6 @@ popd
 /usr/share/package-licenses/ksystemstats/7d9831e05094ce723947d729c2a46a09d6e90275
 /usr/share/package-licenses/ksystemstats/7ff5a7dd2c915b2b34329c892e06917c5f82f3a4
 /usr/share/package-licenses/ksystemstats/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-/usr/share/package-licenses/ksystemstats/e712eadfab0d2357c0f50f599ef35ee0d87534cb
 /usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a
 /usr/share/package-licenses/ksystemstats/f1946dab78e58c04c8c25ec6b074f5fc5c2830fe
 
