@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : ksystemstats
-Version  : 5.26.4
-Release  : 26
-URL      : https://download.kde.org/stable/plasma/5.26.4/ksystemstats-5.26.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.26.4/ksystemstats-5.26.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.26.4/ksystemstats-5.26.4.tar.xz.sig
+Version  : 5.26.5
+Release  : 27
+URL      : https://download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-2.0 GPL-3.0
@@ -29,6 +29,9 @@ BuildRequires : pkg-config
 BuildRequires : pkgconfig(libnl-3.0)
 BuildRequires : pkgconfig(libnl-route-3.0)
 BuildRequires : systemd-dev
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 KSystemStats
@@ -89,31 +92,31 @@ services components for the ksystemstats package.
 
 
 %prep
-%setup -q -n ksystemstats-5.26.4
-cd %{_builddir}/ksystemstats-5.26.4
+%setup -q -n ksystemstats-5.26.5
+cd %{_builddir}/ksystemstats-5.26.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1669824829
+export SOURCE_DATE_EPOCH=1673315834
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 %cmake .. -DBUILD_TESTING=OFF
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1669824829
+export SOURCE_DATE_EPOCH=1673315834
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksystemstats
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a || :
