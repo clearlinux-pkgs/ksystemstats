@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : ksystemstats
-Version  : 5.26.5
-Release  : 27
-URL      : https://download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.26.5/ksystemstats-5.26.5.tar.xz.sig
+Version  : 5.27.0
+Release  : 28
+URL      : https://download.kde.org/stable/plasma/5.27.0/ksystemstats-5.27.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.27.0/ksystemstats-5.27.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.27.0/ksystemstats-5.27.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-2.0 GPL-3.0
@@ -22,12 +22,14 @@ Requires: ksystemstats-services = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
+BuildRequires : kio-dev
 BuildRequires : libksysguard-dev
 BuildRequires : lm-sensors-dev
 BuildRequires : networkmanager-qt-dev
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(libnl-3.0)
 BuildRequires : pkgconfig(libnl-route-3.0)
+BuildRequires : pkgconfig(x11)
 BuildRequires : systemd-dev
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -92,15 +94,15 @@ services components for the ksystemstats package.
 
 
 %prep
-%setup -q -n ksystemstats-5.26.5
-cd %{_builddir}/ksystemstats-5.26.5
+%setup -q -n ksystemstats-5.27.0
+cd %{_builddir}/ksystemstats-5.27.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1673315834
+export SOURCE_DATE_EPOCH=1676684282
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -116,7 +118,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1673315834
+export SOURCE_DATE_EPOCH=1676684282
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksystemstats
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a || :

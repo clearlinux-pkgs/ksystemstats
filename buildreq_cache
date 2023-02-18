@@ -1,2 +1,4 @@
-5.26.5
+5.27.0
+kio-dev
+pkgconfig(x11)
 systemd-dev
