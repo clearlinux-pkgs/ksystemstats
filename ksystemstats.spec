@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : ksystemstats
-Version  : 5.27.3
-Release  : 32
-URL      : https://download.kde.org/stable/plasma/5.27.3/ksystemstats-5.27.3.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.27.3/ksystemstats-5.27.3.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.27.3/ksystemstats-5.27.3.tar.xz.sig
+Version  : 5.27.4
+Release  : 33
+URL      : https://download.kde.org/stable/plasma/5.27.4/ksystemstats-5.27.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.27.4/ksystemstats-5.27.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.27.4/ksystemstats-5.27.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause BSD-3-Clause CC0-1.0 GPL-2.0 GPL-3.0
@@ -93,15 +93,15 @@ services components for the ksystemstats package.
 
 
 %prep
-%setup -q -n ksystemstats-5.27.3
-cd %{_builddir}/ksystemstats-5.27.3
+%setup -q -n ksystemstats-5.27.4
+cd %{_builddir}/ksystemstats-5.27.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679532033
+export SOURCE_DATE_EPOCH=1680722734
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -117,7 +117,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1679532033
+export SOURCE_DATE_EPOCH=1680722734
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ksystemstats
 cp %{_builddir}/ksystemstats-%{version}/LICENSES/BSD-2-Clause.txt %{buildroot}/usr/share/package-licenses/ksystemstats/ea97eb88ae53ec41e26f8542176ab986d7bc943a || :
