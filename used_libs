@@ -1,8 +1,10 @@
 libKF6CoreAddons.so.6
+libKF6Crash.so.6
 libKF6I18n.so.6
 libKF6KIOCore.so.6
 libKF6NetworkManagerQt.so.6
 libKF6Solid.so.6
+libKSysGuardFormatter.so.2
 libKSysGuardSystemStats.so.2
 libQt6Core.so.6
 libQt6DBus.so.6
